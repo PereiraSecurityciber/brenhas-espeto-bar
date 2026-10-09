@@ -1,0 +1,1123 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brenhas Espeto Bar</title>
+<meta name="description" content="Brenhas Espeto Bar — espetinho na brasa, cerveja gelada e música ao vivo na Av. Nordestina, 3726, Vila Nova Curuçá, São Paulo. Terça a domingo, das 16h à meia-noite.">
+<meta name="theme-color" content="#1d140f">
+<meta property="og:title" content="Brenhas Espeto Bar">
+<meta property="og:description" content="Espeto arretado, cerveja gelada e música ao vivo na Av. Nordestina, 3726 — São Paulo.">
+<meta property="og:image" content="fotos/fachada.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="fotos/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Inter:wght@400;500;600;700&family=Bitter:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BarOrPub",
+  "name": "Brenhas Espeto Bar",
+  "servesCuisine": "Brasileira",
+  "priceRange": "R$ 20–40",
+  "sameAs": ["https://www.instagram.com/brenhas_espeto_bar/"],
+  "telephone": "+55 11 96252-5624",
+  "image": "fotos/fachada.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Nordestina, 3726 - Vila Nova Curuçá",
+    "addressLocality": "São Paulo",
+    "addressRegion": "SP",
+    "postalCode": "08032-000",
+    "addressCountry": "BR"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "16:00", "closes": "23:59"
+  }]
+}
+</script>
+<style>
+  :root {
+    /* Paleta sertaneja: barro, urucum, mostarda, anil, mandacaru, papel de cordel */
+    --ink: #1d140f;
+    --ink-2: #281c15;
+    --ink-3: #3a2a20;
+    --paper: #f4e7cf;
+    --paper-2: #ead8b8;
+    --barro: #b8442a;
+    --urucum: #8f2a1b;
+    --mostarda: #e3a32b;
+    --anil: #1f5c7a;
+    --mandacaru: #3f6b3a;
+    --text-dark: #2a1d15;
+    --muted-dark: #6b5544;
+    --text-light: #f7ecdb;
+    --muted-light: #cbb59c;
+    --radius: 14px;
+    --max: 1180px;
+    --shadow: 0 24px 60px -24px rgba(29,20,15,.55);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    background: var(--ink);
+    color: var(--text-light);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 3px solid var(--mostarda); outline-offset: 3px; border-radius: 6px; }
+  .wrap { width: min(var(--max), 100% - 32px); margin-inline: auto; }
+  .display { font-family: "Rye", Georgia, serif; font-weight: 400; line-height: 1.08; letter-spacing: .01em; }
+  .serif { font-family: "Bitter", Georgia, serif; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* ---------- Botões ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 52px; padding: 0 28px; border-radius: 999px;
+    font-weight: 600; font-size: 1rem; letter-spacing: .01em;
+    border: 2px solid transparent; cursor: pointer;
+    transition: transform .2s ease, background .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .btn svg { width: 20px; height: 20px; flex: none; }
+  .btn-primary { background: var(--barro); color: #fff; box-shadow: 0 10px 28px -10px rgba(184,68,42,.8); }
+  .btn-primary:hover { background: #c94f33; transform: translateY(-2px); }
+  .btn-outline { border-color: rgba(247,236,219,.45); color: var(--text-light); }
+  .btn-outline:hover { border-color: var(--mostarda); color: var(--mostarda); }
+  .btn-dark { background: var(--ink); color: var(--paper); }
+  .btn-dark:hover { background: var(--ink-3); transform: translateY(-2px); }
+  .events-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn-light-outline { border-color: rgba(255,255,255,.55); color: #fff; }
+  .btn-light-outline:hover { background: rgba(255,255,255,.12); border-color: #fff; }
+  .btn-ghost-dark { border-color: rgba(29,20,15,.35); color: var(--ink); margin-left: 10px; }
+  .btn-ghost-dark:hover { border-color: var(--barro); color: var(--barro); }
+  .insta-link { display: inline-flex; align-items: center; gap: 8px; color: var(--paper); font-weight: 500; }
+  .insta-link svg { width: 18px; height: 18px; }
+  .insta-link:hover { color: var(--mostarda); }
+  .btn-sm { min-height: 42px; padding: 0 20px; font-size: .92rem; }
+
+  /* ---------- Bandeirinhas ---------- */
+  .bandeirinhas { display: block; width: 100%; height: 44px; }
+
+  /* ---------- Nav ---------- */
+  .nav { position: fixed; inset: 0 0 auto 0; z-index: 60; transition: background .3s ease, box-shadow .3s ease; }
+  .nav.scrolled { background: rgba(29,20,15,.94); backdrop-filter: blur(12px); box-shadow: 0 1px 0 var(--ink-3); }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  /* Logo: recorte do letreiro da fachada */
+  .brand-logo {
+    height: 52px; width: auto; border-radius: 10px;
+    box-shadow: 0 0 0 2px rgba(244,231,207,.25), 0 8px 20px -8px rgba(0,0,0,.7);
+    transition: transform .25s ease;
+  }
+  .brand:hover .brand-logo { transform: rotate(-1.5deg) scale(1.03); }
+  .nav-links { display: flex; align-items: center; gap: 30px; font-size: .95rem; font-weight: 500; }
+  .nav-links a:not(.btn) { color: var(--muted-light); position: relative; padding: 6px 0; transition: color .2s; }
+  .nav-links a:not(.btn)::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 2px; background: var(--mostarda); transition: right .25s; }
+  .nav-links a:not(.btn):hover { color: var(--paper); }
+  .nav-links a:not(.btn):hover::after { right: 0; }
+  .menu-toggle { display: none; width: 46px; height: 46px; border-radius: 12px; background: transparent; border: 1px solid var(--ink-3); color: var(--paper); cursor: pointer; place-items: center; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative; min-height: 100vh; min-height: 100svh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 140px 0 120px; isolation: isolate; overflow: hidden;
+  }
+  .hero-bg { position: absolute; inset: 0; z-index: -2; }
+  .hero-bg video { width: 100%; height: 100%; object-fit: cover; object-position: center 60%; transform: scale(1.06); animation: slowzoom 18s ease-out forwards; }
+  @keyframes slowzoom { to { transform: scale(1); } }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background:
+      linear-gradient(90deg, rgba(29,20,15,.94) 0%, rgba(29,20,15,.78) 45%, rgba(29,20,15,.35) 100%),
+      linear-gradient(0deg, var(--ink) 0%, transparent 35%);
+  }
+  .hero .bandeirinhas { position: absolute; top: 76px; left: 0; right: 0; opacity: .95; }
+  .hero-content { max-width: 680px; }
+  .hero-media { display: none; }
+  @media (min-width: 1021px) {
+    /* Fundo: foto do salão desfocada; vídeo vertical em destaque à direita */
+    .hero-bg { background: url("fotos/salao.jpg") center/cover; filter: blur(18px) brightness(.55) saturate(1.1); transform: scale(1.1); }
+    .hero::before { background: linear-gradient(90deg, rgba(29,20,15,.92) 0%, rgba(29,20,15,.6) 60%, rgba(29,20,15,.45) 100%), linear-gradient(0deg, var(--ink) 0%, transparent 35%); }
+    .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: center; }
+    .hero-media {
+      display: block; order: 2; position: relative; margin: 0;
+      height: min(64vh, 600px); aspect-ratio: 9 / 16;
+      border-radius: 22px; overflow: hidden; transform: rotate(2.5deg);
+      border: 4px solid var(--paper);
+      box-shadow: 14px 14px 0 var(--barro), 14px 14px 0 4px var(--ink), 0 40px 80px -20px rgba(0,0,0,.8);
+    }
+    .hero-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-media figcaption {
+      position: absolute; left: 14px; bottom: 14px; z-index: 2;
+      display: flex; align-items: center; gap: 8px;
+      background: rgba(29,20,15,.8); backdrop-filter: blur(6px); color: var(--paper);
+      padding: 7px 14px; border-radius: 999px; font-size: .85rem; font-weight: 600;
+    }
+    .hero-media .rec { width: 8px; height: 8px; border-radius: 50%; background: #e5664c; animation: pulse-red 1.6s infinite; }
+    @keyframes pulse-red { 50% { opacity: .3; } }
+  }
+  .status {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 8px 16px 8px 12px; border-radius: 999px;
+    background: rgba(247,236,219,.08); border: 1px solid rgba(247,236,219,.18);
+    font-size: .9rem; font-weight: 500; margin-bottom: 26px;
+  }
+  .status .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--muted-light); }
+  .status.open .dot { background: #5fd38a; box-shadow: 0 0 0 4px rgba(95,211,138,.22); animation: pulse 2s infinite; }
+  .status.closed .dot { background: #e5664c; }
+  @keyframes pulse { 50% { box-shadow: 0 0 0 8px rgba(95,211,138,0); } }
+  .hero h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); color: var(--paper); }
+  .hero h1 em { font-style: normal; color: var(--mostarda); }
+  .hero .lead { font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--muted-light); margin: 22px 0 36px; max-width: 540px; }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+
+
+
+  /* ---------- Seções ---------- */
+  section { padding: 120px 0; position: relative; }
+  .paper { background: var(--paper); color: var(--text-dark); }
+  .paper::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+    background-image: radial-gradient(rgba(42,29,21,.08) 1px, transparent 1px);
+    background-size: 5px 5px;
+  }
+  .paper > * { position: relative; }
+  .kicker {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: "Bitter", serif; font-style: italic; font-weight: 500;
+    color: var(--barro); font-size: 1.05rem; margin-bottom: 14px;
+  }
+  .kicker::before { content: ""; width: 28px; height: 2px; background: currentColor; }
+  .dark .kicker { color: var(--mostarda); }
+  .title { font-size: clamp(2.1rem, 4.6vw, 3.4rem); margin-bottom: 18px; }
+  .paper .title { color: var(--ink); }
+  .dark .title { color: var(--paper); }
+  .sub { font-size: 1.08rem; max-width: 600px; }
+  .paper .sub { color: var(--muted-dark); }
+  .dark .sub { color: var(--muted-light); }
+  .center { text-align: center; }
+  .center .sub { margin-inline: auto; }
+  .center .kicker::after { content: ""; width: 28px; height: 2px; background: currentColor; }
+
+  /* Sobre */
+  
+  .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 72px; align-items: center; }
+  .woodcut { position: relative; }
+  .woodcut img {
+    border-radius: 6px; border: 3px solid var(--ink); width: 100%; aspect-ratio: 4/3; object-fit: cover;
+    filter: saturate(1.05) contrast(1.03);
+  }
+  .woodcut::before {
+    content: ""; position: absolute; inset: 18px -18px -18px 18px; border-radius: 6px;
+    background: var(--barro); border: 3px solid var(--ink); z-index: -1;
+  }
+  .woodcut .stamp {
+    position: absolute; right: -22px; top: -26px; width: 118px; height: 118px;
+    transform: rotate(10deg); filter: drop-shadow(0 8px 14px rgba(0,0,0,.25));
+  }
+  .about-text p { color: var(--muted-dark); font-size: 1.06rem; margin-bottom: 14px; }
+  .about-text p strong { color: var(--text-dark); }
+  .checks { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; margin-top: 26px; }
+  .checks li { display: flex; gap: 10px; align-items: flex-start; font-weight: 500; font-size: .96rem; }
+  .checks svg { width: 20px; height: 20px; flex: none; color: var(--mandacaru); margin-top: 2px; }
+
+  /* Experiência */
+  .dark { background: var(--ink); }
+  .exp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
+  .card {
+    background: var(--ink-2); border: 1px solid var(--ink-3); border-radius: 20px;
+    padding: 38px 32px 34px; position: relative;
+    transition: transform .3s ease, border-color .3s ease;
+  }
+  .card:hover { transform: translateY(-6px); border-color: rgba(227,163,43,.5); }
+  .card::after {
+    content: ""; position: absolute; left: 0; right: 0; top: 0; height: 5px; border-radius: 20px 20px 0 0;
+    background: repeating-linear-gradient(90deg, var(--barro) 0 24px, var(--mostarda) 24px 48px, var(--anil) 48px 72px, var(--mandacaru) 72px 96px);
+  }
+  .card .ic { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; background: rgba(227,163,43,.12); color: var(--mostarda); margin-bottom: 24px; }
+  .card .ic svg { width: 30px; height: 30px; }
+  .card h3 { font-family: "Bitter", serif; font-size: 1.45rem; color: var(--paper); margin-bottom: 10px; }
+  .card p { color: var(--muted-light); }
+
+  /* Galeria */
+  .gallery { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 120px; gap: 16px; margin-top: 60px; }
+  .gallery button {
+    position: relative; border: 0; padding: 0; cursor: zoom-in; overflow: hidden;
+    border-radius: var(--radius); background: var(--paper-2);
+    box-shadow: 0 0 0 2px var(--ink);
+  }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+  .gallery button:hover img { transform: scale(1.06); }
+  .gallery figcaption {
+    position: absolute; left: 12px; bottom: 12px; right: 12px;
+    display: flex; justify-content: flex-start;
+  }
+  .gallery figcaption span {
+    background: rgba(29,20,15,.82); color: var(--paper); backdrop-filter: blur(6px);
+    padding: 6px 12px; border-radius: 999px; font-size: .82rem; font-weight: 500;
+  }
+  .g1 { grid-column: span 5; grid-row: span 4; }
+  .g2 { grid-column: span 4; grid-row: span 2; }
+  .g3 { grid-column: span 3; grid-row: span 2; }
+  .g4 { grid-column: span 3; grid-row: span 2; }
+  .g5 { grid-column: span 4; grid-row: span 2; }
+  .g6 { grid-column: span 4; grid-row: span 3; }
+  .g7 { grid-column: span 8; grid-row: span 3; }
+
+  /* Lightbox */
+  .lightbox { border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh; }
+  .lightbox::backdrop { background: rgba(15,10,7,.92); backdrop-filter: blur(4px); }
+  .lightbox[open] { display: grid; place-items: center; }
+  .lightbox img { max-width: min(92vw, 1100px); max-height: 82vh; border-radius: 10px; box-shadow: var(--shadow); }
+  .lb-caption { color: var(--paper); text-align: center; margin-top: 14px; font-family: "Bitter"; }
+  .lb-btn {
+    position: fixed; width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(247,236,219,.3);
+    background: rgba(29,20,15,.7); color: var(--paper); cursor: pointer; display: grid; place-items: center;
+  }
+  .lb-btn:hover { background: var(--barro); border-color: var(--barro); }
+  .lb-btn svg { width: 24px; height: 24px; }
+  .lb-close { top: 20px; right: 20px; }
+  .lb-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+  .lb-next { right: 20px; top: 50%; transform: translateY(-50%); }
+
+  /* Avaliações (versão enxuta) */
+  .reviews { padding: 100px 0; }
+  .quotes { display: grid; grid-template-columns: repeat(3, 1fr); margin: 48px 0 40px; }
+  .quotes blockquote {
+    font-family: "Bitter", serif; font-style: italic; font-size: 1.25rem; line-height: 1.55;
+    color: var(--paper); text-align: center; padding: 8px 36px;
+  }
+  .quotes blockquote + blockquote { border-left: 1px solid var(--ink-3); }
+  .rev-link { color: var(--mostarda); font-weight: 600; border-bottom: 1px solid transparent; transition: border-color .2s; }
+  .rev-link:hover { border-color: var(--mostarda); }
+  @media (max-width: 860px) {
+    .quotes { grid-template-columns: 1fr; gap: 0; max-width: 520px; margin-inline: auto; }
+    .quotes blockquote { padding: 22px 8px; }
+    .quotes blockquote + blockquote { border-left: 0; border-top: 1px solid var(--ink-3); }
+  }
+
+  /* Eventos */
+  .events { background: var(--barro); color: #fff; padding: 0; overflow: hidden; }
+  .events-grid { display: grid; grid-template-columns: 1.1fr 1fr; align-items: stretch; }
+  .events-text { padding: 96px 64px 96px 0; }
+  .events .kicker { color: var(--paper); }
+  .events .title { color: #fff; }
+  .events p { color: rgba(255,255,255,.86); font-size: 1.08rem; max-width: 520px; margin-bottom: 30px; }
+  .events-list { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 34px; }
+  .events-list li { padding: 8px 16px; border-radius: 999px; background: rgba(29,20,15,.22); font-weight: 500; font-size: .92rem; }
+  .events-photo { position: relative; min-height: 420px; }
+  .events-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .events-photo::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, var(--barro), transparent 30%); }
+
+  /* Visite */
+  .visit-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 28px; margin-top: 60px; align-items: stretch; }
+  .panel { background: var(--ink-2); border: 1px solid var(--ink-3); border-radius: 20px; padding: 34px; }
+  .panel h3 { font-family: "Bitter"; color: var(--paper); font-size: 1.25rem; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+  .panel h3 svg { width: 22px; height: 22px; color: var(--mostarda); }
+  .hours { list-style: none; }
+  .hours li { display: flex; justify-content: space-between; padding: 11px 14px; border-radius: 10px; color: var(--muted-light); }
+  .hours li + li { margin-top: 2px; }
+  .hours li.today { background: rgba(227,163,43,.14); color: var(--paper); font-weight: 600; }
+  .hours li.today span:first-child::after { content: " · hoje"; color: var(--mostarda); font-weight: 500; }
+  .hours .off { color: #e5867a; }
+  .hours-src { display: flex; align-items: center; gap: 8px; margin-top: 14px; font-size: .82rem; color: var(--muted-light); }
+  .hours-src[hidden] { display: none; }
+  .hours-src::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #5fd38a; }
+  .divider { height: 1px; background: var(--ink-3); margin: 28px 0; }
+  .addr { color: var(--paper); font-size: 1.08rem; font-weight: 500; }
+  .addr small { display: block; color: var(--muted-light); font-weight: 400; font-size: .95rem; margin-top: 2px; }
+  .panel .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+  .access { display: flex; gap: 10px; margin-top: 22px; color: var(--muted-light); font-size: .9rem; align-items: flex-start; }
+  .access svg { width: 20px; height: 20px; flex: none; color: var(--mostarda); margin-top: 1px; }
+  .map { border-radius: 20px; overflow: hidden; border: 1px solid var(--ink-3); min-height: 460px; background: var(--ink-2); }
+  .map iframe { width: 100%; height: 100%; min-height: 460px; border: 0; display: block; }
+
+  /* CTA final */
+  .final { text-align: center; padding: 110px 0 120px; overflow: hidden; }
+  .final .title { font-size: clamp(2.4rem, 6vw, 4.2rem); }
+  .final .sub { margin: 0 auto 36px; }
+  .final-logo { width: min(320px, 80%); height: auto; margin: 0 auto 30px; border-radius: 14px; box-shadow: 0 0 0 3px var(--ink), 10px 10px 0 var(--barro), 10px 10px 0 3px var(--ink); }
+  .final .mandacaru { position: absolute; bottom: 0; width: 140px; color: var(--mandacaru); opacity: .9; }
+  .final .mandacaru.l { left: 1.5%; width: 110px; }
+  .sanfoneiro { position: absolute; left: 7%; bottom: 0; width: 250px; z-index: 1; }
+  .sf-fole { transform-box: fill-box; transform-origin: center; animation: fole 1.2s ease-in-out infinite; }
+  @keyframes fole { 50% { transform: scaleX(.86); } }
+  .sf-notes { animation: notas 2.4s ease-in-out infinite; }
+  @keyframes notas { 50% { transform: translateY(-8px); opacity: .55; } }
+  .sf-sun { transform-box: fill-box; transform-origin: center; animation: sol 40s linear infinite; }
+  @keyframes sol { to { transform: rotate(360deg); } }
+  @media (max-width: 1100px) { .sanfoneiro { width: 180px; left: 3%; } .final .mandacaru.l { display: none; } }
+  @media (max-width: 780px) {
+    .sanfoneiro { position: relative; left: auto; display: block; width: 170px; margin: 0 auto 10px; }
+  }
+  .final .mandacaru.r { right: 4%; transform: scaleX(-1); width: 110px; }
+
+  footer { background: var(--ink); color: var(--muted-light); font-size: .9rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px 30px; padding: 34px 0; border-top: 1px solid var(--ink-3); }
+  footer .credits { justify-content: center; padding: 18px 0 26px; font-size: .84rem; }
+  footer .credits strong { color: var(--mostarda); font-weight: 600; }
+
+  /* Botão flutuante mobile */
+  .float-cta { display: none; }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* ---------- Responsivo ---------- */
+  @media (max-width: 1020px) {
+    .about-grid, .visit-grid { grid-template-columns: 1fr; gap: 56px; }
+    .woodcut { max-width: 620px; margin-right: 18px; }
+    .exp-grid { grid-template-columns: 1fr; max-width: 560px; margin-inline: auto; }
+    .events-grid { grid-template-columns: 1fr; }
+    .events-text { padding: 80px 0 56px; }
+    .events-photo { min-height: 320px; margin-inline: -16px; }
+    .events-photo::before { background: linear-gradient(180deg, var(--barro), transparent 30%); }
+    .gallery { grid-template-columns: repeat(6, 1fr); grid-auto-rows: 110px; }
+    .g1 { grid-column: span 6; grid-row: span 4; }
+    .g2, .g3, .g4, .g5 { grid-column: span 3; grid-row: span 2; }
+    .g6 { grid-column: span 6; grid-row: span 3; }
+    .g7 { grid-column: span 6; grid-row: span 3; }
+  }
+  @media (max-width: 780px) {
+    .menu-toggle { display: grid; }
+    .nav-links {
+      position: absolute; top: 76px; left: 0; right: 0; flex-direction: column; gap: 0;
+      background: rgba(29,20,15,.98); padding: 8px 16px 22px; border-bottom: 1px solid var(--ink-3);
+      display: none;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a:not(.btn) { width: 100%; text-align: center; padding: 14px 0; }
+    .nav-links a:not(.btn)::after { display: none; }
+    .nav-links .btn { width: 100%; margin-top: 10px; }
+    .hero { padding: 150px 0 150px; }
+    .hero::before { background: linear-gradient(0deg, var(--ink) 5%, rgba(29,20,15,.72) 50%, rgba(29,20,15,.6) 100%); }
+    .hero-ctas .btn { flex: 1 1 100%; }
+    section { padding: 88px 0; }
+    .checks { grid-template-columns: 1fr; }
+    .woodcut .stamp { width: 90px; height: 90px; right: -10px; top: -20px; }
+    .panel { padding: 26px 20px; }
+    .map, .map iframe { min-height: 340px; }
+    .final .mandacaru { width: 80px; }
+    .final .mandacaru.r { width: 64px; }
+    .lb-prev, .lb-next { top: auto; bottom: 24px; transform: none; }
+    .lb-prev { left: calc(50% - 64px); }
+    .lb-next { right: calc(50% - 64px); }
+    .float-cta {
+      display: flex; position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 55;
+      transform: translateY(140%); transition: transform .35s ease;
+    }
+    .float-cta.show { transform: none; }
+    .float-cta { gap: 10px; }
+    .float-cta .btn { flex: 1; padding: 0 14px; box-shadow: 0 14px 30px -8px rgba(0,0,0,.6); }
+    .btn-whats { background: var(--mandacaru); color: #fff; }
+    footer .credits { padding-bottom: 96px; }
+  }
+  /* ---------- 3D ---------- */
+  /* Tilt: elementos com [data-tilt] giram seguindo o ponteiro (JS define --rx/--ry/--gx/--gy) */
+  [data-tilt] {
+    --rx: 0deg; --ry: 0deg; --gx: 50%; --gy: 50%; --lift: 0px;
+    transform-style: preserve-3d;
+    transition: transform .8s cubic-bezier(.2,.8,.2,1), opacity .8s ease, box-shadow .5s ease;
+  }
+  [data-tilt].tilting { transition: transform .08s linear, box-shadow .3s ease; }
+  [data-tilt]::before {
+    content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; border-radius: inherit;
+    background: radial-gradient(circle at var(--gx) var(--gy), rgba(255,240,210,.32), transparent 55%);
+    opacity: 0; transition: opacity .4s ease;
+  }
+  [data-tilt].tilting::before { opacity: 1; }
+  .card[data-tilt].tilting { --lift: 10px; }
+  .card .ic, .card h3 { transform: translateZ(40px); }
+  .card p { transform: translateZ(22px); }
+  .gallery button[data-tilt].tilting { --lift: 18px; box-shadow: 0 0 0 2px var(--ink), 0 30px 50px -18px rgba(29,20,15,.6); z-index: 2; }
+  .gallery figcaption { transform: translateZ(36px); }
+
+  @media (min-width: 1021px) {
+    .hero-grid { perspective: 1200px; }
+    .hero-media[data-tilt] {
+      transform: rotateX(var(--rx)) rotateY(calc(var(--ry) - 12deg)) rotateZ(2.5deg) translateZ(var(--lift));
+      animation: card-float 6s ease-in-out infinite;
+    }
+    .hero-media[data-tilt].tilting { animation-play-state: paused; --lift: 30px; }
+    .hero-media figcaption { transform: translateZ(50px); }
+    @keyframes card-float {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -14px; }
+    }
+  }
+
+  /* Revelar em 3D: as seções "viram a página" ao entrar */
+  .reveal { transform: perspective(1000px) translateY(40px) rotateX(14deg); transform-origin: 50% 100%; }
+  .reveal.in { transform: none; }
+  .gallery .reveal, .exp-grid .reveal { transform: perspective(1000px) translateY(40px) rotateX(18deg) rotateY(-8deg); }
+  .gallery .reveal.in, .exp-grid .reveal.in { transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateZ(var(--lift, 0px)); }
+
+  /* Bandeirinhas balançando ao vento */
+  .bandeirinhas use { transform-origin: 11px 0; animation: sway 3.2s ease-in-out infinite; animation-delay: var(--d, 0s); }
+  @keyframes sway {
+    0%, 100% { transform: skewX(-10deg) scaleX(.82) scaleY(.92); }
+    50% { transform: skewX(10deg) scaleX(1) scaleY(1); }
+  }
+
+  /* Selo girando no próprio eixo */
+  .woodcut .stamp { animation: stamp-spin 9s ease-in-out infinite; transform-style: preserve-3d; }
+  @keyframes stamp-spin {
+    0%, 70% { transform: rotate(10deg) rotateY(0deg); }
+    85% { transform: rotate(10deg) rotateY(180deg); }
+    100% { transform: rotate(10deg) rotateY(360deg); }
+  }
+  .woodcut { transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+
+  /* Logo final flutuando em 3D */
+  .final { perspective: 900px; }
+  .final-logo { animation: logo-3d 7s ease-in-out infinite; }
+  @keyframes logo-3d {
+    0%, 100% { transform: rotateX(8deg) rotateY(-14deg) translateY(0); }
+    50% { transform: rotateX(-6deg) rotateY(14deg) translateY(-10px); }
+  }
+
+
+  @media (max-width: 780px) {
+    .brand-logo { height: 44px; }
+    .final .btn { width: 100%; }
+    .btn-ghost-dark { margin: 12px 0 0; }
+  }
+  @media (min-width: 781px) and (max-width: 1100px) { .nav-links { gap: 18px; font-size: .88rem; } }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal, .gallery .reveal, .exp-grid .reveal { opacity: 1; transform: none !important; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Símbolos SVG reutilizáveis -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H5a2 2 0 0 1 0-4h13v4"/><path d="M3 5v14a2 2 0 0 0 2 2h15V7"/><circle cx="16" cy="14" r="1.4" fill="currentColor"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></symbol>
+    <symbol id="i-whats" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.6-4.8A9 9 0 1 1 8 19.6Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.4-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2Z" fill="currentColor" stroke-width="1"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-access" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><path d="M12 7v6h5l2 6M8 10a6 6 0 1 0 7.5 8.5"/></symbol>
+    <!-- Bandeirinha de São João -->
+    <symbol id="flag" viewBox="0 0 30 40"><path d="M0 0h30v40L15 30 0 40z"/></symbol>
+  </defs>
+</svg>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#inicio" class="brand" aria-label="Brenhas Espeto Bar — voltar ao início">
+      <img class="brand-logo" src="fotos/logo.png" alt="Brenhas Espeto Bar" width="402" height="134">
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav-links" id="navLinks" aria-label="Principal">
+      <a href="#sobre">A casa</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#galeria">Fotos</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#visite">Horários</a>
+      <a class="btn btn-primary btn-sm" href="https://www.google.com/maps/dir/?api=1&destination=Brenhas+Espeto+Bar%2C+Av.+Nordestina+3726%2C+S%C3%A3o+Paulo" target="_blank" rel="noopener noreferrer">
+        <svg><use href="#i-route"/></svg> Como chegar
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+  <!-- O vídeo é vertical: no desktop vai num quadro ao lado do texto; no celular ocupa o fundo -->
+  <div class="hero-bg" id="heroBg">
+    <video id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="fotos/salao.jpg" aria-hidden="true">
+      <source src="fotos/salao.mp4" type="video/mp4">
+    </video>
+  </div>
+  <svg class="bandeirinhas" viewBox="0 0 1200 44" preserveAspectRatio="none" aria-hidden="true" id="flagsHero"></svg>
+  <div class="wrap hero-grid">
+    <figure class="hero-media" id="heroMedia" aria-label="Vídeo do salão do Brenhas">
+      <figcaption><span class="rec"></span> Nosso salão</figcaption>
+    </figure>
+    <div class="hero-content">
+      <div class="status" id="status" role="status"><span class="dot"></span><span id="statusText">Ter a dom · 16h à meia-noite</span></div>
+      <h1 class="display" id="hero-title">Espeto arretado, <em>cerveja gelada</em> e música ao vivo</h1>
+      <p class="lead">Na Av. Nordestina, a brasa acende todo fim de tarde. Puxe uma cadeira, chame a turma e fique à vontade: aqui é casa de nordestino, sempre cabe mais um.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=Brenhas+Espeto+Bar%2C+Av.+Nordestina+3726%2C+S%C3%A3o+Paulo" target="_blank" rel="noopener noreferrer">
+          <svg><use href="#i-route"/></svg> Traçar rota
+        </a>
+        <a class="btn btn-outline" href="#galeria">Ver fotos da casa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="paper about" id="sobre" aria-labelledby="sobre-title">
+  <div class="wrap about-grid">
+    <div class="woodcut reveal">
+      <img src="fotos/fachada.jpg" alt="Fachada do Brenhas Espeto Bar na Av. Nordestina, 3726, com letreiro laranja e parede verde" loading="lazy" width="1200" height="675">
+      <!-- Selo estilo xilogravura -->
+      <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="56" fill="#e3a32b" stroke="#1d140f" stroke-width="3"/>
+        <circle cx="60" cy="60" r="46" fill="none" stroke="#1d140f" stroke-width="1.5" stroke-dasharray="3 4"/>
+        <defs><path id="circ" d="M60 60m-38 0a38 38 0 1 1 76 0a38 38 0 1 1-76 0"/></defs>
+        <text font-family="Inter" font-weight="700" font-size="10.5" letter-spacing="2.4" fill="#1d140f"><textPath href="#circ">• NA BRASA • DESDE SEMPRE • ARRETADO </textPath></text>
+        <path d="M60 36c4 9 12 13 12 25a12 12 0 0 1-24 0c0-6 3-9 6-12 1 5 3 7 6 8-2-6-2-13 0-21Z" fill="#b8442a" stroke="#1d140f" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="about-text reveal">
+      <p class="kicker">A casa</p>
+      <h2 class="display title" id="sobre-title">Sabor de boteco, acolhida de sertão</h2>
+      <p>O <strong>Brenhas Espeto Bar</strong> é aquele lugar de bairro que vira ponto de encontro: espetinho saindo da brasa, porções caprichadas para dividir e cerveja estupidamente gelada.</p>
+      <p>Tudo com o jeito nordestino de receber, com mesa farta, conversa boa e preço justo. Não é à toa que <strong>mais de quatro mil pessoas</strong> já avaliaram a casa no Google.</p>
+      <ul class="checks">
+        <li><svg><use href="#i-check"/></svg> Espetinhos na brasa</li>
+        <li><svg><use href="#i-check"/></svg> Porções e pratos para dividir</li>
+        <li><svg><use href="#i-check"/></svg> Mesas externas</li>
+        <li><svg><use href="#i-check"/></svg> Acessível para cadeirantes</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA -->
+<section class="dark" id="experiencia" aria-labelledby="exp-title">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="kicker">Experiência</p>
+      <h2 class="display title" id="exp-title">Chegue cedo, saia tarde</h2>
+      <p class="sub">Do happy hour ao fim da noite, o Brenhas tem clima para cada momento.</p>
+    </div>
+    <div class="exp-grid">
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <h3>Música ao vivo</h3>
+        <p>Som ao vivo para embalar a resenha enquanto o espeto chega na mesa. Noite boa tem trilha sonora.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M5.6 5.6l1.4 1.4M3 12h2M19 12h2M17 7l1.4-1.4"/><path d="M7 12a5 5 0 0 1 10 0"/><path d="M4 16h16M6 16v5M18 16v5"/></svg></div>
+        <h3>Mesas ao ar livre</h3>
+        <p>Mesas externas para aproveitar o fim de tarde na calçada, do jeitinho das cidades do interior.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8M12 15v7M7 3h10l-1 7a4 4 0 0 1-8 0Z"/><path d="M7.5 6.5h9"/></svg></div>
+        <h3>Espaço para eventos</h3>
+        <p>Espaço privativo para aniversário, confraternização ou happy hour da firma. A festa é sua, a brasa é nossa.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="paper" id="galeria" aria-labelledby="gal-title">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="kicker">Da brasa pra mesa</p>
+      <h2 class="display title" id="gal-title">Bateu a fome?</h2>
+      <p class="sub">Um pouco do que sai da cozinha e do clima da casa. Toque nas fotos para ampliar.</p>
+    </div>
+    <div class="gallery" id="gallery">
+      <button class="g1 reveal" data-caption="Tábuas fartas para dividir com a turma"><img src="fotos/tabua.jpg" alt="Tábua com carnes na brasa e porções sobre a mesa" loading="lazy"><figcaption><span>Tábuas para dividir</span></figcaption></button>
+      <button class="g2 reveal" data-caption="Porções, bebidas e o balcão do bar"><img src="fotos/bar.jpg" alt="Montagem com porções, bebidas e o balcão do bar" loading="lazy"><figcaption><span>O bar</span></figcaption></button>
+      <button class="g3 reveal" data-caption="Pratos bem servidos"><img src="fotos/parmegiana.jpg" alt="Prato à parmegiana com arroz e batata frita" loading="lazy"><figcaption><span>Pratos bem servidos</span></figcaption></button>
+      <button class="g4 reveal" data-caption="Porções da casa"><img src="fotos/peixe.jpg" alt="Porção frita com salada e limão" loading="lazy"><figcaption><span>Porções da casa</span></figcaption></button>
+      <button class="g5 reveal" data-caption="Petiscos e acompanhamentos"><img src="fotos/porcao.jpg" alt="Petiscos com farofa e vinagrete em cumbucas de barro" loading="lazy"><figcaption><span>Com farofa e vinagrete</span></figcaption></button>
+      <button class="g6 reveal" data-caption="Comida boa e cerveja gelada"><img src="fotos/mesa.jpg" alt="Mesa com prato, salada e copo de cerveja" loading="lazy"><figcaption><span>Cerveja gelada</span></figcaption></button>
+      <button class="g7 reveal" data-caption="O salão, pronto para receber você"><img src="fotos/salao.jpg" alt="Salão do bar com mesas de madeira e iluminação de varal" loading="lazy" style="object-position:center 65%"><figcaption><span>O salão</span></figcaption></button>
+    </div>
+  </div>
+</section>
+
+<!-- AVALIAÇÕES (trechos reais exibidos pelo Google Maps) -->
+<section class="dark reviews" id="avaliacoes" aria-labelledby="rev-title">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="kicker">Quem foi, aprovou</p>
+      <h2 class="display title" id="rev-title">O que dizem no Google</h2>
+    </div>
+    <div class="quotes reveal">
+      <blockquote>“Música ao vivo, comida deliciosa e ótimo atendimento.”</blockquote>
+      <blockquote>“Comida boa e várias opções de bebidas e cachaças artesanais maravilhosas.”</blockquote>
+      <blockquote>“Lugar top, ambiente familiar, comida excelente.”</blockquote>
+    </div>
+    <p class="center reveal">
+      <a class="rev-link" href="https://search.google.com/local/reviews?placeid=ChIJD3hzIZJjzpQRmvJbbZQg5UE" target="_blank" rel="noopener noreferrer">Ver as <span id="revCount">4.159</span> avaliações no Google →</a>
+    </p>
+  </div>
+</section>
+
+<!-- EVENTOS -->
+<section class="events" id="eventos" aria-labelledby="ev-title">
+  <div class="wrap events-grid">
+    <div class="events-text reveal">
+      <p class="kicker">Eventos</p>
+      <h2 class="display title" id="ev-title">Tem festa? Tem Brenhas.</h2>
+      <p>Temos espaço privativo para a sua comemoração, com espetinho na brasa, cerveja gelada e música ao vivo para deixar tudo mais animado.</p>
+      <ul class="events-list">
+        <li>Aniversários</li><li>Confraternizações</li><li>Happy hour da empresa</li><li>Encontros de turma</li>
+      </ul>
+      <div class="events-ctas">
+        <a class="btn btn-dark" href="https://wa.me/5511962525624?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20sobre%20eventos%20no%20Brenhas." target="_blank" rel="noopener noreferrer">
+          <svg><use href="#i-whats"/></svg> Reservar pelo WhatsApp
+        </a>
+        <a class="btn btn-light-outline" href="https://ig.me/m/brenhas_espeto_bar" target="_blank" rel="noopener noreferrer">
+          <svg><use href="#i-chat"/></svg> Direct no Instagram
+        </a>
+      </div>
+    </div>
+    <div class="events-photo" aria-hidden="true"><img src="fotos/salao.jpg" alt="" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- VISITE -->
+<section class="dark" id="visite" aria-labelledby="vis-title">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="kicker">Venha visitar</p>
+      <h2 class="display title" id="vis-title">Horários e localização</h2>
+    </div>
+    <div class="visit-grid">
+      <div class="panel reveal">
+        <h3><svg><use href="#i-clock"/></svg> Horário de funcionamento</h3>
+        <ul class="hours" id="hours">
+          <li data-day="1"><span>Segunda</span><span class="off">Fechado</span></li>
+          <li data-day="2"><span>Terça</span><span>16:00 – 00:00</span></li>
+          <li data-day="3"><span>Quarta</span><span>16:00 – 00:00</span></li>
+          <li data-day="4"><span>Quinta</span><span>16:00 – 00:00</span></li>
+          <li data-day="5"><span>Sexta</span><span>16:00 – 00:00</span></li>
+          <li data-day="6"><span>Sábado</span><span>16:00 – 00:00</span></li>
+          <li data-day="0"><span>Domingo</span><span>16:00 – 00:00</span></li>
+        </ul>
+        <p class="hours-src" id="hoursSrc" hidden></p>
+        <div class="divider"></div>
+        <h3><svg><use href="#i-pin"/></svg> Endereço</h3>
+        <p class="addr">Av. Nordestina, 3726<small>Vila Nova Curuçá, São Paulo – SP · CEP 08032-000</small></p>
+        <div class="actions">
+          <a class="btn btn-primary btn-sm" href="https://www.google.com/maps/dir/?api=1&destination=Brenhas+Espeto+Bar%2C+Av.+Nordestina+3726%2C+S%C3%A3o+Paulo" target="_blank" rel="noopener noreferrer"><svg><use href="#i-route"/></svg> Traçar rota</a>
+          <a class="btn btn-outline btn-sm" href="https://www.google.com/maps/search/?api=1&query=Brenhas+Espeto+Bar%2C+Av.+Nordestina+3726%2C+S%C3%A3o+Paulo" target="_blank" rel="noopener noreferrer"><svg><use href="#i-star"/></svg> Avaliações no Google</a>
+        </div>
+        <div class="divider"></div>
+        <h3><svg><use href="#i-phone"/></svg> Contato</h3>
+        <p class="addr"><a href="tel:+5511962525624">(11) 96252-5624</a><small>Ligue ou chame no WhatsApp para reservas e eventos</small></p>
+        <div class="actions">
+          <a class="btn btn-primary btn-sm" href="https://wa.me/5511962525624?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Brenhas." target="_blank" rel="noopener noreferrer"><svg><use href="#i-whats"/></svg> WhatsApp</a>
+          <a class="btn btn-outline btn-sm" href="tel:+5511962525624"><svg><use href="#i-phone"/></svg> Ligar</a>
+        </div>
+        <p class="access"><svg><use href="#i-access"/></svg> Banheiro e estacionamento com acessibilidade para pessoas em cadeira de rodas.</p>
+      </div>
+      <div class="map reveal">
+        <iframe title="Mapa com a localização do Brenhas Espeto Bar"
+          src="https://maps.google.com/maps?q=Brenhas%20Espeto%20Bar%2C%20Av.%20Nordestina%2C%203726%2C%20S%C3%A3o%20Paulo&z=16&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="paper final" aria-labelledby="final-title">
+  <!-- Mandacarus -->
+  <!-- Sanfoneiro em xilogravura: homenagem ao forró pé de serra -->
+  <svg class="sanfoneiro" viewBox="0 0 240 320" role="img" aria-label="Ilustração de sanfoneiro nordestino com chapéu de couro tocando sanfona, em estilo xilogravura">
+    <defs>
+      <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="6" height="6" fill="#1d140f"/><line x1="0" y1="0" x2="0" y2="6" stroke="#3a2a20" stroke-width="2"/>
+      </pattern>
+    </defs>
+    <!-- sol de fundo -->
+    <g class="sf-sun">
+      <circle cx="120" cy="120" r="92" fill="#e3a32b"/>
+      <g stroke="#e3a32b" stroke-width="6" stroke-linecap="round">
+        <path d="M120 10v-8M120 238v8M10 120H2M238 120h-8M42 42l-6-6M198 198l6 6M198 42l6-6M42 198l-6 6"/>
+      </g>
+    </g>
+    <!-- chapéu de couro em meia-lua, com estrela -->
+    <path d="M38 78 Q120 4 202 78 Q186 70 172 72 Q120 50 68 72 Q54 70 38 78Z" fill="#8f2a1b" stroke="#1d140f" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M66 74 Q120 24 174 74" fill="none" stroke="#1d140f" stroke-width="3"/>
+    <path d="M78 66 Q120 34 162 66" fill="none" stroke="#e3a32b" stroke-width="2" stroke-dasharray="4 5"/>
+    <path d="M120 38l4.4 9 9.9 1.4-7.2 7 1.7 9.8-8.8-4.6-8.8 4.6 1.7-9.8-7.2-7 9.9-1.4z" fill="#f4e7cf" stroke="#1d140f" stroke-width="2"/>
+    <!-- rosto (silhueta) -->
+    <path d="M100 78 Q98 112 120 118 Q142 112 140 78Z" fill="#1d140f"/>
+    <!-- lenço -->
+    <path d="M100 116 L140 116 L120 140Z" fill="#b8442a" stroke="#1d140f" stroke-width="3" stroke-linejoin="round"/>
+    <!-- gibão -->
+    <path d="M70 128 Q120 108 170 128 L182 222 L58 222Z" fill="url(#hatch)" stroke="#1d140f" stroke-width="4" stroke-linejoin="round"/>
+    <!-- sanfona -->
+    <g class="sf-sanfona" transform="rotate(-6 120 176)">
+      <rect x="48" y="142" width="34" height="66" rx="5" fill="#f4e7cf" stroke="#1d140f" stroke-width="4"/>
+      <g stroke="#1d140f" stroke-width="2.5"><path d="M56 152h18M56 162h18M56 172h18M56 182h18M56 192h18"/></g>
+      <g class="sf-fole">
+        <rect x="82" y="146" width="76" height="58" fill="#b8442a" stroke="#1d140f" stroke-width="4"/>
+        <g stroke="#1d140f" stroke-width="3"><path d="M92 146v58M102 146v58M112 146v58M122 146v58M132 146v58M142 146v58M152 146v58"/></g>
+        <g stroke="#e3a32b" stroke-width="2"><path d="M97 150v50M117 150v50M137 150v50"/></g>
+      </g>
+      <rect x="158" y="142" width="34" height="66" rx="5" fill="#f4e7cf" stroke="#1d140f" stroke-width="4"/>
+      <g fill="#1d140f"><circle cx="168" cy="156" r="3"/><circle cx="180" cy="156" r="3"/><circle cx="168" cy="170" r="3"/><circle cx="180" cy="170" r="3"/><circle cx="168" cy="184" r="3"/><circle cx="180" cy="184" r="3"/><circle cx="174" cy="196" r="3"/></g>
+    </g>
+    <!-- mãos -->
+    <circle cx="66" cy="196" r="9" fill="#1d140f"/>
+    <circle cx="176" cy="150" r="9" fill="#1d140f"/>
+    <!-- pernas e botas -->
+    <path d="M78 222 L70 292 L98 292 L110 226Z" fill="#1d140f"/>
+    <path d="M130 226 L142 292 L170 292 L162 222Z" fill="#1d140f"/>
+    <path d="M62 292h40v10H58Z M140 292h40l4 10h-44Z" fill="#8f2a1b" stroke="#1d140f" stroke-width="3"/>
+    <!-- notas musicais -->
+    <g class="sf-notes" fill="#1d140f">
+      <path d="M206 120v-26l14-4v24" stroke="#1d140f" stroke-width="3" fill="none"/><circle cx="202" cy="121" r="5"/><circle cx="216" cy="115" r="5"/>
+      <path d="M26 150v-22" stroke="#1d140f" stroke-width="3"/><circle cx="22" cy="151" r="5"/>
+    </g>
+  </svg>
+
+  <svg class="mandacaru l" viewBox="0 0 120 200" aria-hidden="true" fill="currentColor"><path d="M52 200V40a8 8 0 0 1 16 0v160Zm0-70H32a14 14 0 0 1-14-14V70a7 7 0 0 1 14 0v44h20Zm16-30h18V58a7 7 0 0 1 14 0v46a12 12 0 0 1-12 12H68Z"/></svg>
+  <svg class="mandacaru r" viewBox="0 0 120 200" aria-hidden="true" fill="currentColor"><path d="M52 200V60a8 8 0 0 1 16 0v140Zm0-50H34a12 12 0 0 1-12-12V96a7 7 0 0 1 14 0v38h16Zm16-34h16V80a7 7 0 0 1 14 0v40a12 12 0 0 1-12 12H68Z"/></svg>
+  <div class="wrap reveal">
+    <img class="final-logo" src="fotos/logo.png" alt="Brenhas Espeto Bar" width="402" height="134" loading="lazy">
+    <p class="kicker">Bora?</p>
+    <h2 class="display title" id="final-title">A brasa já tá acesa</h2>
+    <p class="sub">Chame a turma e venha pro Brenhas. <span id="finalHours">Ter a Dom, das 16h à meia-noite.</span></p>
+    <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=Brenhas+Espeto+Bar%2C+Av.+Nordestina+3726%2C+S%C3%A3o+Paulo" target="_blank" rel="noopener noreferrer"><svg><use href="#i-route"/></svg> Traçar rota agora</a>
+    <a class="btn btn-ghost-dark" href="https://www.instagram.com/brenhas_espeto_bar/" target="_blank" rel="noopener noreferrer"><svg><use href="#i-insta"/></svg> @brenhas_espeto_bar</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <svg class="bandeirinhas" viewBox="0 0 1200 44" preserveAspectRatio="none" aria-hidden="true" id="flagsFooter"></svg>
+  <div class="wrap">
+    <span>© <span id="year"></span> Brenhas Espeto Bar · Av. Nordestina, 3726 – Vila Nova Curuçá, São Paulo/SP</span>
+    <a class="insta-link" href="tel:+5511962525624"><svg><use href="#i-phone"/></svg> (11) 96252-5624</a>
+    <a class="insta-link" href="https://www.instagram.com/brenhas_espeto_bar/" target="_blank" rel="noopener noreferrer"><svg><use href="#i-insta"/></svg> @brenhas_espeto_bar</a>
+    <span>Beba com moderação. Venda de bebidas alcoólicas proibida para menores de 18 anos.</span>
+  </div>
+  <div class="wrap credits">
+    <span>Todos os direitos reservados · <strong>Bayron Tecnologia</strong></span>
+  </div>
+</footer>
+
+<div class="float-cta" id="floatCta">
+  <a class="btn btn-whats" href="https://wa.me/5511962525624?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Brenhas." target="_blank" rel="noopener noreferrer" aria-label="Chamar no WhatsApp"><svg><use href="#i-whats"/></svg> WhatsApp</a>
+  <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=Brenhas+Espeto+Bar%2C+Av.+Nordestina+3726%2C+S%C3%A3o+Paulo" target="_blank" rel="noopener noreferrer"><svg><use href="#i-route"/></svg> Como chegar</a>
+</div>
+
+<!-- Lightbox -->
+<dialog class="lightbox" id="lightbox" aria-label="Foto ampliada">
+  <figure>
+    <img id="lbImg" src="" alt="">
+    <figcaption class="lb-caption" id="lbCap"></figcaption>
+  </figure>
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Fechar"><svg><use href="#i-x"/></svg></button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Foto anterior"><svg><use href="#i-left"/></svg></button>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Próxima foto"><svg><use href="#i-right"/></svg></button>
+</dialog>
+
+<script>
+  /*
+   * Configuração da sincronização com o Google (horários e avaliações em tempo real).
+   * 1. No Google Cloud, ative "Maps JavaScript API" e "Places API (New)".
+   * 2. Crie uma chave e RESTRINJA: aplicação = sites (HTTP referrer) com o domínio do site;
+   *    APIs = apenas Maps JavaScript API e Places API (New).
+   * 3. Cole a chave abaixo. Sem chave, o site usa os horários padrão definidos no código.
+   */
+  window.BRENHAS_CONFIG = {
+    googleMapsApiKey: '',                       // ex.: 'AIza...'
+    placeId: 'ChIJD3hzIZJjzpQRmvJbbZQg5UE'      // Brenhas Espeto Bar no Google Maps
+  };
+</script>
+<script>
+(() => {
+  // Bandeirinhas de São João
+  const colors = ['#b8442a', '#e3a32b', '#1f5c7a', '#3f6b3a', '#f4e7cf', '#8f2a1b'];
+  const NS = 'http://www.w3.org/2000/svg';
+  document.querySelectorAll('.bandeirinhas').forEach(svg => {
+    const rope = document.createElementNS(NS, 'path');
+    rope.setAttribute('d', 'M0 4 Q600 18 1200 4');
+    rope.setAttribute('stroke', '#cbb59c'); rope.setAttribute('stroke-width', '1.5'); rope.setAttribute('fill', 'none');
+    svg.appendChild(rope);
+    for (let i = 0, x = 6; x < 1200; i++, x += 34) {
+      const t = x / 1200, y = 4 + 2 * t * (1 - t) * 14 * 2 - 1;
+      // Cada bandeira fica num <g> posicionado; o <use> interno balança em torno do próprio topo
+      const g = document.createElementNS(NS, 'g');
+      g.setAttribute('transform', `translate(${x} ${y.toFixed(1)})`);
+      const u = document.createElementNS(NS, 'use');
+      u.setAttribute('href', '#flag');
+      u.setAttribute('width', 22); u.setAttribute('height', 28);
+      u.setAttribute('fill', colors[i % colors.length]);
+      u.style.setProperty('--d', `${-(i * 0.18).toFixed(2)}s`);
+      g.appendChild(u);
+      svg.appendChild(g);
+    }
+  });
+
+  // ---------- Horários (sincronizados com o Google quando há chave configurada) ----------
+  const CONFIG = window.BRENHAS_CONFIG || {};
+  const WEEK = 7 * 1440;
+  const DAY_NAMES = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+  const DAY_ABBR = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+  const DAY_ORDER = [1, 2, 3, 4, 5, 6, 0]; // tabela começa na segunda
+
+  // Mesmo formato do Google Places: { open: {day, hour, minute}, close: {day, hour, minute} }, day 0 = domingo.
+  // Usado enquanto o Google não responde ou se a chave não estiver configurada.
+  let periods = [2, 3, 4, 5, 6, 0].map(d => ({ open: { day: d, hour: 16, minute: 0 }, close: { day: (d + 1) % 7, hour: 0, minute: 0 } }));
+  let googleOpenNow = null;   // resposta do Google para "aberto agora" (considera feriados)
+  let businessStatus = null;
+
+  const pad = n => String(n).padStart(2, '0');
+  const hhmm = p => `${pad(p.hour)}:${pad(p.minute)}`;
+  const shortTime = p => p.hour === 0 && p.minute === 0 ? 'meia-noite' : `${p.hour}h${p.minute ? pad(p.minute) : ''}`;
+  const weekMin = p => p.day * 1440 + p.hour * 60 + p.minute;
+
+  const nowInSaoPaulo = () => {
+    const parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Sao_Paulo', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date());
+    const get = t => parts.find(p => p.type === t).value;
+    const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
+    return { day, hour: +get('hour'), minute: +get('minute') };
+  };
+
+  const spans = () => periods.map(p => {
+    const start = weekMin(p.open);
+    if (!p.close) return { p, start, end: start + WEEK };          // 24h
+    let end = weekMin(p.close);
+    if (end <= start) end += WEEK;
+    return { p, start, end };
+  });
+
+  const computeStatus = () => {
+    const now = weekMin(nowInSaoPaulo());
+    const list = spans();
+    const current = list.find(s => (now >= s.start && now < s.end) || (now + WEEK >= s.start && now + WEEK < s.end));
+    let next = null, wait = Infinity;
+    list.forEach(s => { const d = ((s.start - now) % WEEK + WEEK) % WEEK; if (d > 0 && d < wait) { wait = d; next = s; } });
+    return { current, next, wait, today: nowInSaoPaulo().day };
+  };
+
+  const status = document.getElementById('status');
+  const statusText = document.getElementById('statusText');
+  const renderStatus = () => {
+    const { current, next, wait, today } = computeStatus();
+    const open = googleOpenNow ?? Boolean(current);
+    status.classList.toggle('open', open);
+    status.classList.toggle('closed', !open);
+    if (businessStatus && businessStatus !== 'OPERATIONAL') {
+      statusText.textContent = businessStatus === 'CLOSED_TEMPORARILY' ? 'Temporariamente fechado' : 'Fechado';
+      status.classList.remove('open'); status.classList.add('closed');
+      return;
+    }
+    if (open) {
+      statusText.textContent = current && current.p.close
+        ? `Aberto agora · fecha ${current.p.close.hour === 0 && current.p.close.minute === 0 ? 'à' : 'às'} ${shortTime(current.p.close)}`
+        : 'Aberto agora';
+    } else if (next) {
+      const nowMin = (today * 1440) + nowInSaoPaulo().hour * 60 + nowInSaoPaulo().minute;
+      const daysAhead = Math.floor((nowMin % 1440 + wait) / 1440);
+      const when = daysAhead === 0 ? 'hoje' : daysAhead === 1 ? 'amanhã' : DAY_NAMES[next.p.open.day].toLowerCase();
+      statusText.textContent = `Fechado agora · abre ${when} às ${shortTime(next.p.open)}`;
+    } else {
+      statusText.textContent = 'Fechado agora';
+    }
+  };
+
+  const dayText = d => {
+    const list = periods.filter(p => p.open.day === d).sort((a, b) => weekMin(a.open) - weekMin(b.open));
+    if (!list.length) return null;
+    return list.map(p => p.close ? `${hhmm(p.open)} – ${hhmm(p.close)}` : 'Aberto 24 horas').join(', ');
+  };
+
+  const renderHours = () => {
+    const today = nowInSaoPaulo().day;
+    const ul = document.getElementById('hours');
+    ul.replaceChildren(...DAY_ORDER.map(d => {
+      const li = document.createElement('li');
+      li.dataset.day = d;
+      if (d === today) li.classList.add('today');
+      const name = document.createElement('span'); name.textContent = DAY_NAMES[d];
+      const val = document.createElement('span');
+      const txt = dayText(d);
+      val.textContent = txt || 'Fechado';
+      if (!txt) val.className = 'off';
+      li.append(name, val);
+      return li;
+    }));
+
+    // Resumo ("Ter a Dom · das 16h à meia-noite") usado no CTA final
+    const openDays = DAY_ORDER.filter(d => dayText(d));
+    const texts = new Set(openDays.map(dayText));
+    let daysLabel = 'Veja os horários', hoursLabel = 'consulte a tabela abaixo';
+    if (openDays.length === 7 && texts.size === 1) daysLabel = 'Todos os dias';
+    else if (openDays.length && texts.size === 1) {
+      const idx = openDays.map(d => DAY_ORDER.indexOf(d));
+      const contiguous = idx.every((v, i) => i === 0 || v === idx[i - 1] + 1);
+      daysLabel = contiguous ? `${DAY_ABBR[openDays[0]]} a ${DAY_ABBR[openDays[openDays.length - 1]]}` : openDays.map(d => DAY_ABBR[d]).join(', ');
+    }
+    if (texts.size === 1 && openDays.length) {
+      const p = periods.find(x => x.open.day === openDays[0]);
+      hoursLabel = p.close ? `das ${shortTime(p.open)} ${p.close.hour === 0 && p.close.minute === 0 ? 'à' : 'às'} ${shortTime(p.close)}` : 'aberto 24 horas';
+    }
+    document.getElementById('finalHours').textContent = `${daysLabel}, ${hoursLabel}.`;
+  };
+
+  renderHours();
+  renderStatus();
+  setInterval(renderStatus, 60 * 1000);
+
+  // Google Maps JavaScript API (Places). A chave fica em BRENHAS_CONFIG no topo do HTML e
+  // deve ser restrita por domínio (HTTP referrer) no Google Cloud.
+  const loadGoogleMaps = key => new Promise((resolve, reject) => {
+    if (window.google?.maps?.importLibrary) return resolve();
+    window.__brenhasMapsReady = resolve;
+    const s = document.createElement('script');
+    s.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(key)}&v=weekly&loading=async&language=pt-BR&region=BR&callback=__brenhasMapsReady`;
+    s.async = true;
+    s.onerror = reject;
+    document.head.appendChild(s);
+  });
+
+  const syncWithGoogle = async () => {
+    if (!CONFIG.googleMapsApiKey || !CONFIG.placeId) return;
+    try {
+      await loadGoogleMaps(CONFIG.googleMapsApiKey);
+      const { Place } = await google.maps.importLibrary('places');
+      const place = new Place({ id: CONFIG.placeId, requestedLanguage: 'pt-BR' });
+      await place.fetchFields({ fields: ['regularOpeningHours', 'businessStatus', 'rating', 'userRatingCount'] });
+
+      const gp = place.regularOpeningHours?.periods;
+      if (Array.isArray(gp) && gp.length) {
+        periods = gp.map(p => ({
+          open: { day: p.open.day, hour: p.open.hour, minute: p.open.minute },
+          close: p.close ? { day: p.close.day, hour: p.close.hour, minute: p.close.minute } : null
+        }));
+      }
+      businessStatus = place.businessStatus || null;
+      try { const o = await place.isOpen(); googleOpenNow = typeof o === 'boolean' ? o : null; } catch { googleOpenNow = null; }
+
+      // Avaliações também em tempo real
+      if (place.userRatingCount) {
+        const count = place.userRatingCount.toLocaleString('pt-BR');
+        document.getElementById('revCount').textContent = count;
+      }
+
+      renderHours();
+      renderStatus();
+      const src = document.getElementById('hoursSrc');
+      const t = new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' }).format(new Date());
+      src.textContent = `Sincronizado com o Google · atualizado às ${t}`;
+      src.hidden = false;
+    } catch (err) {
+      console.warn('Não foi possível sincronizar com o Google; usando horários padrão.', err);
+    }
+  };
+  syncWithGoogle();
+  setInterval(syncWithGoogle, 30 * 60 * 1000);
+
+  // Vídeo do hero: respeita quem prefere menos movimento
+  const heroVideo = document.getElementById('heroVideo');
+  const heroBg = document.getElementById('heroBg'), heroMedia = document.getElementById('heroMedia');
+  const desktop = matchMedia('(min-width: 1021px)');
+  const placeVideo = () => {
+    const target = desktop.matches ? heroMedia : heroBg;
+    if (heroVideo.parentElement !== target) { target.prepend(heroVideo); if (!matchMedia('(prefers-reduced-motion: reduce)').matches) heroVideo.play().catch(() => {}); }
+  };
+  placeVideo(); desktop.addEventListener('change', placeVideo);
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { heroVideo.removeAttribute('autoplay'); heroVideo.pause(); }
+
+  // Nav
+  const nav = document.getElementById('nav');
+  const floatCta = document.getElementById('floatCta');
+  const onScroll = () => {
+    nav.classList.toggle('scrolled', scrollY > 30);
+    const nearEnd = innerHeight + scrollY > document.body.scrollHeight - 260;
+    floatCta.classList.toggle('show', scrollY > innerHeight * .8 && !nearEnd);
+  };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  const toggle = document.getElementById('menuToggle');
+  const links = document.getElementById('navLinks');
+  const setMenu = open => { links.classList.toggle('open', open); toggle.setAttribute('aria-expanded', String(open)); toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu'); };
+  toggle.addEventListener('click', () => setMenu(!links.classList.contains('open')));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+  // Lightbox
+  const items = [...document.querySelectorAll('#gallery button')];
+  const lb = document.getElementById('lightbox'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap');
+  let idx = 0;
+  const show = i => {
+    idx = (i + items.length) % items.length;
+    const img = items[idx].querySelector('img');
+    lbImg.src = img.src; lbImg.alt = img.alt; lbCap.textContent = items[idx].dataset.caption;
+  };
+  items.forEach((b, i) => b.addEventListener('click', () => { show(i); lb.showModal(); }));
+  document.getElementById('lbClose').onclick = () => lb.close();
+  document.getElementById('lbPrev').onclick = () => show(idx - 1);
+  document.getElementById('lbNext').onclick = () => show(idx + 1);
+  lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+  lb.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') show(idx - 1); if (e.key === 'ArrowRight') show(idx + 1); });
+
+  // Tilt 3D: segue o ponteiro apenas em dispositivos com mouse
+  const canTilt = matchMedia('(hover: hover) and (pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (canTilt) {
+    document.querySelectorAll('.card, .gallery button, #heroMedia').forEach(el => el.setAttribute('data-tilt', ''));
+    document.querySelectorAll('[data-tilt]').forEach(el => {
+      const max = el.id === 'heroMedia' ? 14 : 10;
+      let frame = 0;
+      el.addEventListener('pointermove', e => {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => {
+          const r = el.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+          el.classList.add('tilting');
+          el.style.setProperty('--ry', `${((px - .5) * 2 * max).toFixed(2)}deg`);
+          el.style.setProperty('--rx', `${((.5 - py) * 2 * max).toFixed(2)}deg`);
+          el.style.setProperty('--gx', `${(px * 100).toFixed(1)}%`);
+          el.style.setProperty('--gy', `${(py * 100).toFixed(1)}%`);
+        });
+      });
+      el.addEventListener('pointerleave', () => {
+        cancelAnimationFrame(frame);
+        el.classList.remove('tilting');
+        el.style.setProperty('--rx', '0deg'); el.style.setProperty('--ry', '0deg');
+      });
+    });
+
+    // Foto da fachada inclina levemente com a rolagem (parallax 3D)
+    const woodcut = document.querySelector('.woodcut');
+    const onParallax = () => {
+      const r = woodcut.getBoundingClientRect();
+      const t = Math.max(-1, Math.min(1, (r.top + r.height / 2 - innerHeight / 2) / innerHeight));
+      woodcut.style.transform = `perspective(1100px) rotateY(${(t * 10).toFixed(2)}deg) rotateX(${(-t * 5).toFixed(2)}deg)`;
+    };
+    addEventListener('scroll', () => requestAnimationFrame(onParallax), { passive: true }); onParallax();
+  }
+
+  // Reveal
+  const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
