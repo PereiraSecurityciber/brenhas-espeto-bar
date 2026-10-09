@@ -147,67 +147,34 @@
   .hero-content { max-width: 680px; }
   .hero-grid { display: grid; grid-template-columns: 1fr; gap: 44px; align-items: center; }
 
-  /* Smartphone desenhado em CSS com o vídeo do salão tocando na tela */
+  /* Celular e tablet: quadro abaixo do texto, largura total, proporção 4:5 */
   .hero-media {
-    order: 2; position: relative; margin: 0 auto;
-    width: min(250px, 66vw); aspect-ratio: 9 / 19.2;
-    padding: 10px; border-radius: 46px;
-    background: linear-gradient(150deg, #3a3a3f 0%, #141416 38%, #0a0a0b 70%, #2a2a2e 100%);
-    box-shadow:
-      inset 0 0 0 1.5px rgba(255,255,255,.14),
-      inset 0 0 0 5px #050506,
-      0 0 0 1px #000,
-      0 45px 90px -25px rgba(0,0,0,.9),
-      0 0 80px -10px rgba(227,163,43,.25);
-    transform: rotate(2deg);
+    order: 2; position: relative; margin: 0 auto; width: 100%; max-width: 460px;
+    aspect-ratio: 4 / 5; border-radius: 20px; overflow: hidden;
+    border: 3px solid var(--paper); transform: rotate(1.2deg);
+    box-shadow: 9px 9px 0 var(--barro), 9px 9px 0 3px var(--ink), 0 30px 60px -20px rgba(0,0,0,.8);
+    background: var(--ink-2) url("fotos/salao.jpg") center/cover;
   }
-  .phone-screen {
-    position: relative; width: 100%; height: 100%;
-    border-radius: 37px; overflow: hidden; background: #000 url("fotos/salao.jpg") center/cover;
-    isolation: isolate;
-  }
-  .phone-screen video { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block; }
-  /* Ilha dinâmica */
-  .phone-screen::before {
-    content: ""; position: absolute; z-index: 3; top: 10px; left: 50%; transform: translateX(-50%);
-    width: 31%; height: 22px; border-radius: 20px; background: #000;
-    box-shadow: inset -14px 0 0 -9px #1b2430;
-  }
-  /* Indicador inferior */
-  .phone-screen::after {
-    content: ""; position: absolute; z-index: 3; bottom: 7px; left: 50%; transform: translateX(-50%);
-    width: 36%; height: 4px; border-radius: 4px; background: rgba(255,255,255,.75);
-  }
-  /* Reflexo do vidro */
-  .phone-glass {
-    position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit;
-    background: linear-gradient(115deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,0) 32%);
-  }
-  /* Botões laterais */
-  .phone-btn { position: absolute; width: 3px; border-radius: 2px; background: linear-gradient(90deg, #2c2c30, #0e0e10); }
-  .phone-btn.power { right: -3px; top: 27%; height: 15%; }
-  .phone-btn.vol-up { left: -3px; top: 22%; height: 9%; }
-  .phone-btn.vol-down { left: -3px; top: 33%; height: 9%; }
-  .phone-btn.mute { left: -3px; top: 14%; height: 5%; }
+  .hero-media video { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block; }
   .hero-media figcaption {
-    position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 4; white-space: nowrap;
-    display: flex; align-items: center; gap: 7px;
-    background: rgba(29,20,15,.78); backdrop-filter: blur(6px); color: var(--paper);
-    padding: 6px 12px; border-radius: 999px; font-size: .76rem; font-weight: 600;
+    position: absolute; left: 12px; bottom: 12px; z-index: 2;
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(29,20,15,.8); backdrop-filter: blur(6px); color: var(--paper);
+    padding: 6px 12px; border-radius: 999px; font-size: .8rem; font-weight: 600;
   }
-  .hero-media .rec { width: 7px; height: 7px; border-radius: 50%; background: #e5664c; animation: pulse-red 1.6s infinite; }
+  .hero-media .rec { width: 8px; height: 8px; border-radius: 50%; background: #e5664c; animation: pulse-red 1.6s infinite; }
   @keyframes pulse-red { 50% { opacity: .3; } }
 
-  /* Desktop: celular maior, ao lado do texto */
+  /* Desktop: quadro vertical 9:16 ao lado do texto */
   @media (min-width: 1021px) {
-    .hero-grid { grid-template-columns: 1fr auto; gap: 72px; }
-    .hero-media { width: auto; height: min(72vh, 640px); margin: 0 40px 0 0; padding: 12px; border-radius: 54px; transform: rotate(3deg); }
-    .phone-screen { border-radius: 43px; }
-    .phone-screen::before { height: 26px; top: 12px; }
-    .phone-btn { width: 4px; }
-    .phone-btn.power { right: -4px; }
-    .phone-btn.vol-up, .phone-btn.vol-down, .phone-btn.mute { left: -4px; }
-    .hero-media figcaption { font-size: .82rem; bottom: 26px; }
+    .hero-grid { grid-template-columns: 1fr auto; gap: 64px; }
+    .hero-media {
+      width: auto; max-width: none; margin: 0;
+      height: min(64vh, 600px); aspect-ratio: 9 / 16;
+      border-width: 4px; border-radius: 22px; transform: rotate(2.5deg);
+      box-shadow: 14px 14px 0 var(--barro), 14px 14px 0 4px var(--ink), 0 40px 80px -20px rgba(0,0,0,.8);
+    }
+    .hero-media figcaption { left: 14px; bottom: 14px; padding: 7px 14px; font-size: .85rem; }
   }
   .status {
     display: inline-flex; align-items: center; gap: 10px;
@@ -499,6 +466,7 @@
       animation: card-float 6s ease-in-out infinite;
     }
     .hero-media[data-tilt].tilting { animation-play-state: paused; --lift: 30px; }
+    .hero-media figcaption { transform: translateZ(50px); }
     @keyframes card-float {
       0%, 100% { translate: 0 0; }
       50% { translate: 0 -14px; }
@@ -602,19 +570,12 @@
   <div class="hero-bg" aria-hidden="true"></div>
   <svg class="bandeirinhas" viewBox="0 0 1200 44" preserveAspectRatio="none" aria-hidden="true" id="flagsHero"></svg>
   <div class="wrap hero-grid">
-    <!-- Vídeo do salão tocando dentro de um smartphone (CSS): abaixo do texto no celular, ao lado no desktop -->
-    <figure class="hero-media" id="heroMedia" aria-label="Vídeo do salão do Brenhas exibido na tela de um celular">
-      <span class="phone-btn mute" aria-hidden="true"></span>
-      <span class="phone-btn vol-up" aria-hidden="true"></span>
-      <span class="phone-btn vol-down" aria-hidden="true"></span>
-      <span class="phone-btn power" aria-hidden="true"></span>
-      <div class="phone-screen">
-        <video id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="fotos/salao.jpg" aria-hidden="true">
-          <source src="fotos/salao.mp4" type="video/mp4">
-        </video>
-        <span class="phone-glass" aria-hidden="true"></span>
-        <figcaption><span class="rec"></span> Nosso salão</figcaption>
-      </div>
+    <!-- Vídeo vertical num quadro: abaixo do texto no celular, ao lado no desktop -->
+    <figure class="hero-media" id="heroMedia" aria-label="Vídeo do salão do Brenhas">
+      <video id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="fotos/salao.jpg" aria-hidden="true">
+        <source src="fotos/salao.mp4" type="video/mp4">
+      </video>
+      <figcaption><span class="rec"></span> Nosso salão</figcaption>
     </figure>
     <div class="hero-content">
       <div class="status" id="status" role="status"><span class="dot"></span><span id="statusText">Ter a dom · 16h à meia-noite</span></div>
