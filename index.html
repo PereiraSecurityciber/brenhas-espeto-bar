@@ -131,39 +131,50 @@
     display: flex; flex-direction: column; justify-content: center;
     padding: 140px 0 120px; isolation: isolate; overflow: hidden;
   }
-  .hero-bg { position: absolute; inset: 0; z-index: -2; }
-  .hero-bg video { width: 100%; height: 100%; object-fit: cover; object-position: center 60%; transform: scale(1.06); animation: slowzoom 18s ease-out forwards; }
-  @keyframes slowzoom { to { transform: scale(1); } }
+  /* Fundo: foto do salão desfocada. O vídeo (vertical) fica num quadro em todas as telas */
+  .hero-bg {
+    position: absolute; inset: 0; z-index: -2;
+    background: url("fotos/salao.jpg") center/cover;
+    filter: blur(18px) brightness(.55) saturate(1.1); transform: scale(1.1);
+  }
   .hero::before {
     content: ""; position: absolute; inset: 0; z-index: -1;
     background:
-      linear-gradient(90deg, rgba(29,20,15,.94) 0%, rgba(29,20,15,.78) 45%, rgba(29,20,15,.35) 100%),
+      linear-gradient(90deg, rgba(29,20,15,.92) 0%, rgba(29,20,15,.6) 60%, rgba(29,20,15,.45) 100%),
       linear-gradient(0deg, var(--ink) 0%, transparent 35%);
   }
   .hero .bandeirinhas { position: absolute; top: 76px; left: 0; right: 0; opacity: .95; }
   .hero-content { max-width: 680px; }
-  .hero-media { display: none; }
+  .hero-grid { display: grid; grid-template-columns: 1fr; gap: 44px; align-items: center; }
+
+  /* Celular e tablet: quadro abaixo do texto, largura total, proporção 4:5 */
+  .hero-media {
+    order: 2; position: relative; margin: 0 auto; width: 100%; max-width: 460px;
+    aspect-ratio: 4 / 5; border-radius: 20px; overflow: hidden;
+    border: 3px solid var(--paper); transform: rotate(1.2deg);
+    box-shadow: 9px 9px 0 var(--barro), 9px 9px 0 3px var(--ink), 0 30px 60px -20px rgba(0,0,0,.8);
+    background: var(--ink-2) url("fotos/salao.jpg") center/cover;
+  }
+  .hero-media video { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block; }
+  .hero-media figcaption {
+    position: absolute; left: 12px; bottom: 12px; z-index: 2;
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(29,20,15,.8); backdrop-filter: blur(6px); color: var(--paper);
+    padding: 6px 12px; border-radius: 999px; font-size: .8rem; font-weight: 600;
+  }
+  .hero-media .rec { width: 8px; height: 8px; border-radius: 50%; background: #e5664c; animation: pulse-red 1.6s infinite; }
+  @keyframes pulse-red { 50% { opacity: .3; } }
+
+  /* Desktop: quadro vertical 9:16 ao lado do texto */
   @media (min-width: 1021px) {
-    /* Fundo: foto do salão desfocada; vídeo vertical em destaque à direita */
-    .hero-bg { background: url("fotos/salao.jpg") center/cover; filter: blur(18px) brightness(.55) saturate(1.1); transform: scale(1.1); }
-    .hero::before { background: linear-gradient(90deg, rgba(29,20,15,.92) 0%, rgba(29,20,15,.6) 60%, rgba(29,20,15,.45) 100%), linear-gradient(0deg, var(--ink) 0%, transparent 35%); }
-    .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: center; }
+    .hero-grid { grid-template-columns: 1fr auto; gap: 64px; }
     .hero-media {
-      display: block; order: 2; position: relative; margin: 0;
+      width: auto; max-width: none; margin: 0;
       height: min(64vh, 600px); aspect-ratio: 9 / 16;
-      border-radius: 22px; overflow: hidden; transform: rotate(2.5deg);
-      border: 4px solid var(--paper);
+      border-width: 4px; border-radius: 22px; transform: rotate(2.5deg);
       box-shadow: 14px 14px 0 var(--barro), 14px 14px 0 4px var(--ink), 0 40px 80px -20px rgba(0,0,0,.8);
     }
-    .hero-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .hero-media figcaption {
-      position: absolute; left: 14px; bottom: 14px; z-index: 2;
-      display: flex; align-items: center; gap: 8px;
-      background: rgba(29,20,15,.8); backdrop-filter: blur(6px); color: var(--paper);
-      padding: 7px 14px; border-radius: 999px; font-size: .85rem; font-weight: 600;
-    }
-    .hero-media .rec { width: 8px; height: 8px; border-radius: 50%; background: #e5664c; animation: pulse-red 1.6s infinite; }
-    @keyframes pulse-red { 50% { opacity: .3; } }
+    .hero-media figcaption { left: 14px; bottom: 14px; padding: 7px 14px; font-size: .85rem; }
   }
   .status {
     display: inline-flex; align-items: center; gap: 10px;
@@ -399,9 +410,15 @@
     .nav-links a:not(.btn) { width: 100%; text-align: center; padding: 14px 0; }
     .nav-links a:not(.btn)::after { display: none; }
     .nav-links .btn { width: 100%; margin-top: 10px; }
-    .hero { padding: 150px 0 150px; }
+    .hero { padding: 140px 0 80px; min-height: 0; }
     .hero::before { background: linear-gradient(0deg, var(--ink) 5%, rgba(29,20,15,.72) 50%, rgba(29,20,15,.6) 100%); }
-    .hero-ctas .btn { flex: 1 1 100%; }
+    .hero { padding-top: 124px; }
+    .hero .status { margin-bottom: 18px; font-size: .84rem; }
+    .hero h1 { font-size: clamp(2.1rem, 9.4vw, 2.6rem); }
+    .hero .lead { font-size: 1rem; margin: 14px 0 22px; }
+    .hero-ctas { flex-wrap: nowrap; gap: 10px; }
+    .hero-ctas .btn { flex: 1 1 0; min-height: 48px; padding: 0 12px; font-size: .92rem; }
+    .hero-grid { gap: 30px; }
     section { padding: 88px 0; }
     .checks { grid-template-columns: 1fr; }
     .woodcut .stamp { width: 90px; height: 90px; right: -10px; top: -20px; }
@@ -550,15 +567,14 @@
 <main>
 <!-- HERO -->
 <section class="hero" id="inicio" aria-labelledby="hero-title">
-  <!-- O vídeo é vertical: no desktop vai num quadro ao lado do texto; no celular ocupa o fundo -->
-  <div class="hero-bg" id="heroBg">
-    <video id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="fotos/salao.jpg" aria-hidden="true">
-      <source src="fotos/salao.mp4" type="video/mp4">
-    </video>
-  </div>
+  <div class="hero-bg" aria-hidden="true"></div>
   <svg class="bandeirinhas" viewBox="0 0 1200 44" preserveAspectRatio="none" aria-hidden="true" id="flagsHero"></svg>
   <div class="wrap hero-grid">
+    <!-- Vídeo vertical num quadro: abaixo do texto no celular, ao lado no desktop -->
     <figure class="hero-media" id="heroMedia" aria-label="Vídeo do salão do Brenhas">
+      <video id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="fotos/salao.jpg" aria-hidden="true">
+        <source src="fotos/salao.mp4" type="video/mp4">
+      </video>
       <figcaption><span class="rec"></span> Nosso salão</figcaption>
     </figure>
     <div class="hero-content">
@@ -1034,13 +1050,6 @@
 
   // Vídeo do hero: respeita quem prefere menos movimento
   const heroVideo = document.getElementById('heroVideo');
-  const heroBg = document.getElementById('heroBg'), heroMedia = document.getElementById('heroMedia');
-  const desktop = matchMedia('(min-width: 1021px)');
-  const placeVideo = () => {
-    const target = desktop.matches ? heroMedia : heroBg;
-    if (heroVideo.parentElement !== target) { target.prepend(heroVideo); if (!matchMedia('(prefers-reduced-motion: reduce)').matches) heroVideo.play().catch(() => {}); }
-  };
-  placeVideo(); desktop.addEventListener('change', placeVideo);
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) { heroVideo.removeAttribute('autoplay'); heroVideo.pause(); }
 
   // Nav
